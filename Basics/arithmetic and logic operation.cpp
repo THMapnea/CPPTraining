@@ -1,11 +1,7 @@
 #include<iostream>
 
-
-
-
-
 /*
-				MAIN
+		MAIN
 introduction to basic operation in c++
 */
 
@@ -81,3 +77,5 @@ int main(){
 
 	return 0;
 }
+
+
