@@ -27,11 +27,17 @@ int main(){
 	//remainder
 	int rem = a % c;
 	
-	//increment
+	//post increment
 	c++; //it's the same as writing c = c + 1 
 	
-	//decrement
+	// post decrement
 	c--; //itìs the same as writing c = c - 1
+
+	//pre increment
+	++c; //it's the same as writing c = c + 1 but the action is performed before evaluating the variable 
+	
+	// pre decrement
+	--c; //itìs the same as writing c = c - 1 but the action is performed before evaluating the variable
 	
 	//relational operators
 	bool TRUE = a == b; //=> 1 thats the same as saying true
