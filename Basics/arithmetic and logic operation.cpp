@@ -1,9 +1,5 @@
 #include<iostream>
 
-/*
-		MAIN
-introduction to basic operation in c++
-*/
 
 int main(){
 	//data
