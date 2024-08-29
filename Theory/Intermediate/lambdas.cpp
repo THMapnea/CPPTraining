@@ -9,6 +9,8 @@ int main(){
 	int a = 1;
 	int b = 2;
 	int c = 3;
+	//the auto keyword allows the compiler to deduce the type of variable for example given back by the lambda
+
 	
 	//empty lambda with no parameters, no return type and no capture list
 	auto emptyLambda = [] () {
