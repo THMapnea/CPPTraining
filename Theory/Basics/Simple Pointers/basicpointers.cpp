@@ -27,8 +27,9 @@ int main(){
 	//as you will se now the address is the same but the value stored has been modified
 	std::cout<<"the address of the x variable is: "<<p<<" and the value pointed is: "<<*p<<std::endl; 
 	
-	//we can also move ourself between address incrementing or decrementing pointers p++ means p = p + 1 
-	//so if for example p = 2000 then p++ = 2001 referrin to address and not variable
-	std::cout<<"the next memory address is: "<<p++<<std::endl;
+	//we can also move ourself between address incrementing or decrementing pointers means p = p + 1 
+	//so if for example p = 2000 then p = 2004 referring to address and not variable
+	//the increment depends on the size of the pointer so adding 1 to the pointer for integer equals to doing + 4 adress and so on
+	std::cout<<"the next memory address is: "<<p+1<<std::endl;
 	return 0;
 }
