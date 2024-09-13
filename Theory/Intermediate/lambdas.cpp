@@ -22,7 +22,7 @@ int main(){
 		std::cout<<x + y<<std::endl; 
 	};
 	
-	//lamda that uses parameters and capture list the value of the capture list must be declared in the same scope
+	//lambda that uses parameters and capture list the value of the capture list must be declared in the same scope
 	auto captureListLambda = [c] (int x, int y) {
 		std::cout<<c * x * y<<std::endl;
 	};
