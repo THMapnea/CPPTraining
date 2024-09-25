@@ -1,41 +1,39 @@
 #include<iostream>
 
+// In video games, it's common to choose between a limited set of options, such as moving in four directions.
+// Using multiple if-else statements can get messy, so the switch statement is a more efficient and readable alternative.
+// The switch statement checks a variable against constant values and executes the corresponding block of code.
 
-
-//sometimes in videogame we need to choose between four direction and depending on the key pressed we have an output
-//implementing everything by using if - else statement can be a little not optimized
-//the switch statement allows us to decide between constant values
-
-
-int main(){
-	int x;
-	std::cout<<"press a number between 0 and 3 ";
-	std::cin>>x;
-	switch(x){
-		case 0:
-			std::cout<<"you pressed 0"<<std::endl;
-			break; //this line is important because it tells the compiler when the block of action of the case has been finished
-			      //if you dont put this it will go to chek the next case
-	    case 1:
-			std::cout<<"you pressed 1"<<std::endl;
-			break;
-		case 2:
-			std::cout<<"you pressed 2"<<std::endl;
-			break;
-	    case 3:
-			std::cout<<"you pressed 3"<<std::endl;
-			break;
-		//the default handles all the not included cases
-		default:
-			std::cout<<"you pressed any other key or key combination"<<std::endl;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	return 0;
+int main() {
+    int x;
+    
+    // Ask the user to press a number between 0 and 3.
+    std::cout << "Press a number between 0 and 3: ";
+    std::cin >> x;
+    
+    // The switch statement checks the value of 'x' and matches it to one of the cases.
+    // Each case is a potential outcome for the value of 'x'.
+    switch(x) {
+        case 0:
+            std::cout << "You pressed 0" << std::endl;
+            break;  // 'break' stops further execution and exits the switch block after this case is executed.
+            
+        case 1:
+            std::cout << "You pressed 1" << std::endl;
+            break;
+        
+        case 2:
+            std::cout << "You pressed 2" << std::endl;
+            break;
+        
+        case 3:
+            std::cout << "You pressed 3" << std::endl;
+            break;
+        
+        // The default case handles any values not explicitly listed in the cases above.
+        default:
+            std::cout << "You pressed any other key or key combination" << std::endl;
+    }
+    
+    return 0;
 }
