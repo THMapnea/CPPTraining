@@ -1,39 +1,41 @@
 #include<iostream>
-#include<stack>
+#include<stack>  // Including the stack header for using std::stack
 
-//if you studied some DSA you might be familiar with the stack structure that is a LIFO structure
-//that means that the first element is the last one to be taken out and to access it is necessary
-//to pop out all the other values just like a tower of dishes
+// The stack data structure is a LIFO (Last In, First Out) structure.
+// It operates like a stack of plates: the last plate placed on top is the first one removed.
+// Operations include adding (push), removing (pop), and checking the top element (top).
 
+int main() {
+    // Declaring a stack object using std::stack. 
+    // We specify the type of elements to be stored (in this case, integers).
+    std::stack<int> my_stack;
 
+    // To add elements to the stack, we use the .push() function.
+    // Push places an element on top of the stack.
+    my_stack.push(1);  // Stack is now: [1]
+    my_stack.push(2);  // Stack is now: [1, 2] (2 is on top)
 
+    // To access the element on the top of the stack, we use .top().
+    // It returns the top (most recent) element without removing it.
+    std::cout << "The element on top of the stack is: " << my_stack.top() << std::endl;  // Output: 2
 
-int main(){
-	//we declare our stack referring to the std::stack object and telling it the type of value we want to store
-	std::stack<int> my_stack;
-	
-	//to add to the stack we can call push()
-	my_stack.push(1);
-	my_stack.push(2);
-	
-	//to get the top element we can call .top()
-	std::cout<<"the element on top of the stack is: "<<my_stack.top()<<std::endl;
-	
-	//to remove an element we call .pop()
-	my_stack.pop();
-	std::cout<<"the element on top of the stack is: "<<my_stack.top()<<std::endl;
-	
-	//we can also check the size 
-	std::cout<<"the size of the stack is: "<<my_stack.size()<<std::endl;
-	
-	//or we can check if it is empty
-	if(my_stack.empty()){
-		std::cout<<"the stack is empty"<<std::endl;
-	}else{
-		std::cout<<"the stack is not empty"<<std::endl;
-	}
-	
+    // To remove the top element, we use .pop().
+    // It removes the element at the top, but does not return it.
+    my_stack.pop();  // Stack is now: [1] (2 has been removed)
 
-	
-	return 0;
+    // After popping, we can check the new top element.
+    std::cout << "The element on top of the stack is: " << my_stack.top() << std::endl;  // Output: 1
+
+    // We can also check how many elements are currently in the stack using .size().
+    std::cout << "The size of the stack is: " << my_stack.size() << std::endl;  // Output: 1
+
+    // To check if the stack is empty, we use the .empty() function.
+    // It returns a boolean value: true if the stack is empty, false if it contains elements.
+    if (my_stack.empty()) {
+        std::cout << "The stack is empty" << std::endl;
+    } else {
+        std::cout << "The stack is not empty" << std::endl;  // Output: The stack is not empty
+    }
+
+    return 0;
 }
