@@ -1,38 +1,45 @@
 #include<iostream>
 
-
-
-
-//we can define global variable like this outside of any class/struct/funtion ecc
-//this variable can be accessed anywhere int he codebase
+// Global variables are declared outside of any function, class, or struct.
+// These variables can be accessed anywhere in the code after their declaration.
+// Global variables should be used with caution, as they are accessible throughout the entire program.
 int global_var = 10;
 
-struct wrapper{
-	//this variable is accessible only referencing the struct
-	int struct_variable = 23;
+struct wrapper {
+    // This is a member variable of the 'wrapper' struct.
+    // It is accessible only when referencing an instance of 'wrapper'.
+    int struct_variable = 23;
 };
 
-
-//sometimes it can be useful to have a namespace in wich we store variables classes ecc
+// A namespace allows you to group variables, functions, classes, etc., under a common name.
+// This is useful for organizing code and avoiding name conflicts.
 namespace my_namespace {
-	int my_namespace_var = 12;
+    // This variable is scoped within the 'my_namespace' namespace.
+    // It can be accessed by referencing the namespace: 'my_namespace::my_namespace_var'.
+    int my_namespace_var = 12;
 }
 
+int main() {
+    // Function-scoped variables are declared within a function and are only accessible within that function.
+    // These variables exist only during the execution of the function and are destroyed when the function exits.
+    int function_var = 20;
 
+    // Accessing the namespace variable by specifying the namespace.
+    // Similar to how we access 'std::' functions (like 'std::cout'), we reference 'my_namespace::' to use the variable.
+    std::cout << "Namespace variable: " << my_namespace::my_namespace_var << std::endl;
 
+    // Accessing the global variable declared outside the function.
+    // Global variables can be accessed from any function or block of code after their declaration.
+    std::cout << "Global variable: " << global_var << std::endl;
 
+    // Creating an instance of the 'wrapper' struct.
+    wrapper w;
 
+    // Accessing the struct member variable using the instance 'w'.
+    std::cout << "Struct variable: " << w.struct_variable << std::endl;
 
-int main(){
-	
-	//we can define a scoped variable like this in a function like this
-	//this variabl ecan be accessed only in this function
-	int function_var = 20;
-	
-	//to access the namespace variable we do the same thing that we did with the std::function
-	//you can see how we are grabbing function and values from two different namespace
-	std::cout<<my_namespace::my_namespace_var<<std::endl;
-	
-	
-	return 0;
+    // Accessing the function-scoped variable. This variable is only visible within this function.
+    std::cout << "Function variable: " << function_var << std::endl;
+
+    return 0;
 }
