@@ -1,21 +1,21 @@
 #include<iostream>
 
+int main() {
+    // The 'for' loop will iterate 10 times (i = 0 to i = 9)
+    for(int i = 0; i < 10; i++) {
+        // When 'i' equals 8, the 'break' statement will terminate the loop early
+        if(i == 8) {
+            // 'break' will exit the loop entirely when i equals 8
+            break;
+        } else if(i == 5) {
+            // 'continue' will skip the rest of the code in the current iteration
+            // and jump directly to the next iteration (i will increment by 1)
+            continue;
+        }
+        
+        // This code will not run when i == 5 due to the 'continue' statement
+        std::cout << "Iteration: " << i << std::endl;
+    }
 
-
-
-int main(){
-	
-	for(int i = 0; i < 10; i++){
-		if(i == 8){
-			//sometimes we want to exit from a cycle in a very peculiar moment to do so we can use
-			//the break statement for example like we do in switch cases
-			break;
-		}else if(i == 5){
-			//if we want to coninue and skip a piece of code we can cal the keyowrd continue
-			continue;
-		}
-	}
-	
-	
-	return 0;
+    return 0;
 }
