@@ -1,35 +1,42 @@
 #include<iostream>
 
+int main() {
+    // Basic for loop with incrementing iterator.
+    // The for loop consists of three parts: 
+    // 1. Initialization (int i = 0) - the loop starts with i = 0.
+    // 2. Condition (i < 3) - the loop runs as long as i < 3 is true.
+    // 3. Increment (i++) - i is incremented after each iteration.
+    for(int i = 0; i < 3; i++) {
+        std::cout << "Iteration incremented number: " << i << std::endl;
+    }
+    
+    // A for loop with decrementing iterator.
+    // In this loop, i starts at 10 and decreases by 1 (i--) until i is greater than 3.
+    for(int i = 10; i > 3; i--) {
+        std::cout << "Iteration decremented number: " << i << std::endl;
+    }
 
-int main(){
-	//the for loop is defined with an int variable that holds the iteration number,
-	//a exit condition that when set to false breaks from the cycle 
-	//and a increment
-	for(int i = 0; i < 3; i++){
-		std::cout<<"iteration incremented number: "<<i<<std::endl;
-	}
-	
-	//you can also use a decrement if necessary as it follows let's rewrite the for loop
-	for(int i = 10; i > 3; i--){
-		std::cout<<"iteration decremented number: "<<i<<std::endl;
-	}
-	
-	//keep in mind that there are multiple syntaxs to write the for loop like this one
-	for(int i = 0; i < 3;i++)
-		std::cout<<"iteration no brackets number: "<<i<<std::endl;
-		
-		
-	//you can also declare multiple iterator in the for loop
-	for(int i = 0, p = 2; i < 3; i++, p--){
-		std::cout<<"iteration multiple number i:"<<i<<" and p: "<<p<<std::endl;
-	}
-	
-	//you can also use different increment like +2, *2 
-	for (int i = 0; i < 6; i+=2){
-		std::cout<<"iteration with different increment number: "<<i<<std::endl;
-	}
-	
-	//there are other more complex way to declare a for loop like using auto iterator on a vector(library)
-	//or by using expression it all depends on your necessity and writing style
-	return 0;
+    // For loop without curly braces.
+    // If the loop body contains only one statement, the braces {} can be omitted.
+    // However, it's often better to include them for clarity.
+    for(int i = 0; i < 3; i++)
+        std::cout << "Iteration no brackets number: " << i << std::endl;
+
+    // A for loop with multiple iterators.
+    // You can initialize and update multiple variables in a single for loop.
+    // In this case, 'i' is incremented and 'p' is decremented in each iteration.
+    for(int i = 0, p = 2; i < 3; i++, p--) {
+        std::cout << "Iteration multiple number i: " << i << " and p: " << p << std::endl;
+    }
+
+    // A for loop with different step sizes (e.g., i += 2).
+    // In this case, 'i' is incremented by 2 in each iteration, so it takes values 0, 2, 4, ...
+    for (int i = 0; i < 6; i += 2) {
+        std::cout << "Iteration with different increment number: " << i << std::endl;
+    }
+
+    // You can also use complex expressions and auto iterators for different loop styles.
+    // Depending on your needs and writing style, you can customize the loop behavior.
+    
+    return 0;
 }
