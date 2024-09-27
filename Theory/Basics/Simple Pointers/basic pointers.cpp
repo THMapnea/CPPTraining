@@ -1,35 +1,33 @@
 #include<iostream>
 
-//we are maybe at the most complex topic for the basics of c++ the pointers
-
-
-
-
-//data
+// Declare a global variable
 int x = 10;
 
-//before continuing to read remember about the (&) reference operator and the (*) dereference operator and keep in mind that in the moment of declaration
-//of a pointer (*) is not a dereference operator
+// Before continuing, remember:
+// - (&) is the "address-of" operator (to get the address of a variable)
+// - (*) is the "dereference" operator (to access the value stored at a pointer's address)
 
-int main(){
-	//we declare a pointer of int type that means that the variable pointed is of the int type
-	int *p; 
-	
-	//we assign to the pointer the address of the variable we want to point
-	p = &x;
-	
-	//so p contains the address and *p means tell me the value that we can find at the address stored in p
-	std::cout<<"the address of the x variable is: "<<p<<" and the value pointed is: "<<*p<<std::endl; 
-	
-	//trough the pointer we can also access that area of memory to perform operations like switching variables ecc
-	*p = 8,
-	
-	//as you will se now the address is the same but the value stored has been modified
-	std::cout<<"the address of the x variable is: "<<p<<" and the value pointed is: "<<*p<<std::endl; 
-	
-	//we can also move ourself between address incrementing or decrementing pointers means p = p + 1 
-	//so if for example p = 2000 then p = 2004 referring to address and not variable
-	//the increment depends on the size of the pointer so adding 1 to the pointer for integer equals to doing + 4 adress and so on
-	std::cout<<"the next memory address is: "<<p+1<<std::endl;
-	return 0;
+int main() {
+    // Declare a pointer of type int
+    int *p; 
+    
+    // Assign the address of variable x to the pointer p
+    p = &x;
+    
+    // p holds the address of x, and *p gives the value at that address
+    std::cout << "The address of the x variable is: " << p 
+              << " and the value pointed to is: " << *p << std::endl; 
+    
+    // Using the pointer, we can modify the value stored at the address
+    *p = 8;
+    
+    // Now the value stored at x's address has been changed, but the address remains the same
+    std::cout << "The address of the x variable is: " << p 
+              << " and the modified value pointed to is: " << *p << std::endl;
+    
+    // Pointer arithmetic: when we increment a pointer, it moves based on the type size.
+    // For an int pointer, incrementing by 1 means moving 4 bytes forward (on most systems).
+    std::cout << "The next memory address is: " << p + 1 << std::endl;
+    
+    return 0;
 }
