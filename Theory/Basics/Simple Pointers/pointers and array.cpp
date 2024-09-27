@@ -1,40 +1,39 @@
 #include<iostream>
 
-
-//data
-//every data stored in an array is stored at the next memory address for example in the case of the int array
-//every value is stored one next to another like this 3000,3004,3008 basically one sizeof(type) from the other
-int my_array[5] = {0,1,2,3,4}; 
+// Data
+// Every value in the array is stored at consecutive memory addresses.
+// For example, in the case of an `int` array, if `my_array[0]` is at address 3000,
+// then `my_array[1]` will be at 3004, `my_array[2]` at 3008, and so on (assuming 4 bytes per int).
+int my_array[5] = {0, 1, 2, 3, 4}; 
 int my_empty_array[5];
 
-
-
-//prototype
+// Prototype
 void multiply(int *my_array);
 
-int main(){
-	
-	for(int i = 0; i < 5; i++){
-		//we can use the pointer arythmetic to move trough our array
-		//by incrementing the address in the brackets and dereferencing it
-		*(my_empty_array + i) = i;
-	}
-	
-	for(int i = 0; i < 5; i++){
-		std::cout<<my_empty_array[i]<<std::endl;;
-	}
-	
-	multiply(my_array);
-	
-	return 0;
+int main() {
+    // Using pointer arithmetic to fill an empty array
+    for(int i = 0; i < 5; i++) {
+        // Here, we use the pointer notation to assign values to the array
+        *(my_empty_array + i) = i;
+    }
+    
+    // Output the values of `my_empty_array`
+    for(int i = 0; i < 5; i++) {
+        std::cout << my_empty_array[i] << std::endl;
+    }
+    
+    // Call the multiply function which multiplies the array elements by their index
+    multiply(my_array);
+    
+    return 0;
 }
 
-//this can be pretty useful in c a little bit less in c++ but you can pass an array to a function using the pointers 
-//the syntax below is the same as doing int my_array[]
-void multiply(int *my_array){
-	for(int i = 0; i < 5; i++){
-		*(my_array + i) *= i;
-		//I used the pointer notation just to repeat it you can use also the classical with no problem
-		std::cout<<(*(my_array + i))<<std::endl;
-	}
+// This function modifies the array by multiplying each element by its index
+void multiply(int *my_array) {
+    for(int i = 0; i < 5; i++) {
+        // Pointer arithmetic to access and modify array elements
+        *(my_array + i) *= i;
+        // Output each modified element
+        std::cout << *(my_array + i) << std::endl;
+    }
 }
