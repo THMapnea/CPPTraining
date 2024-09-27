@@ -1,43 +1,42 @@
 #include<iostream>
 
+int main() {
+    // Data: Declaring three integers `a`, `b`, and `c`
+    int a = 1;
+    int b = 2;
+    int c = 3;
 
+    // The `auto` keyword is used here so that the compiler automatically deduces the type of the lambda.
+    // Lambdas are anonymous functions that can be declared and used inline.
 
+    // 1. Empty lambda: This lambda doesn't take any parameters, doesn't capture anything, and doesn't return anything.
+    auto emptyLambda = [] () {
+        std::cout << "This is my empty lambda" << std::endl;
+    };
 
+    // 2. Lambda with parameters: This lambda takes two integers as input and prints their sum.
+    auto parameterLambda = [] (int x, int y) {
+        std::cout << "Sum of x and y: " << x + y << std::endl; 
+    };
 
-int main(){
-	//data
-	int a = 1;
-	int b = 2;
-	int c = 3;
-	//the auto keyword allows the compiler to deduce the type of variable for example given back by the lambda
+    // 3. Lambda with a capture list: This lambda captures the variable `c` from the outer scope by value.
+    // It multiplies `c` with the two passed parameters and prints the result.
+    auto captureListLambda = [c] (int x, int y) {
+        std::cout << "Multiplication using captured value c: " << c * x * y << std::endl;
+    };
 
-	
-	//empty lambda with no parameters, no return type and no capture list
-	auto emptyLambda = [] () {
-		std::cout<<"my empty lambda"<<std::endl;
-	};
-	
-	//lambda that only uses parameters
-	auto parameterLambda = [] (int x, int y) {
-		std::cout<<x + y<<std::endl; 
-	};
-	
-	//lambda that uses parameters and capture list the value of the capture list must be declared in the same scope
-	auto captureListLambda = [c] (int x, int y) {
-		std::cout<<c * x * y<<std::endl;
-	};
-	
-	auto referenceLambda  = [&c] (int x) {
-		c += x;
-		std::cout<<c<<std::endl;
-	};
-		
-	
-	
-	//call of the lambdas function
-	emptyLambda();
-	parameterLambda(a,b);
-	captureListLambda(a,b); //as you can see we didn't need to pass the variable contained in the capture list to the lambda since the lambda takes it from it's scope
-	referenceLambda(a); //since we are passing the capture list per reference it will be updated automatically
-	return 0;
+    // 4. Lambda capturing `c` by reference: This lambda captures `c` by reference and modifies its value.
+    // This means that any changes to `c` inside the lambda will affect the original `c` in the outer scope.
+    auto referenceLambda  = [&c] (int x) {
+        c += x;  // Modify `c` by adding `x` to it
+        std::cout << "Updated c after adding x: " << c << std::endl;
+    };
+        
+    // Calling the lambda functions
+    emptyLambda();  // Calls the empty lambda
+    parameterLambda(a, b);  // Passes `a` and `b` to the lambda which adds them and prints the sum
+    captureListLambda(a, b);  // Uses captured value `c` from the outer scope and multiplies with `a` and `b`
+    referenceLambda(a);  // Modifies `c` by adding `a` to it (since `c` is captured by reference)
+
+    return 0;
 }
