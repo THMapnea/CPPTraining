@@ -1,47 +1,39 @@
 #include<iostream>
 
+// Parent class `Animal` represents a generic animal with a public name and a method to display it.
+class Animal {
+public:
+    std::string name;  // Public member variable to hold the animal's name.
 
-
-
-//data
-class Animal{
-	public:
-		std::string name;
-	public:
-		void showName(){
-			std::cout<<"the animal name is : "<<name<<std::endl;
-		}
+public:
+    // Public method to display the animal's name.
+    void showName() {
+        std::cout << "The animal's name is: " << name << std::endl;
+    }
 };
 
-//once we create a class we can introduce the concept of inheritance  that simply means taking a class extending it and giving it new functions
-//values ecc
-class Duck : public Animal{
-	public:
-		void quack(){
-			std::cout<<"quack quack"<<std::endl;
-		}
+// Child class `Duck` inherits from the `Animal` class using the `public` keyword.
+// This means that all public members of `Animal` become public members of `Duck`.
+class Duck : public Animal {
+public:
+    // Additional method specific to `Duck` to simulate a quack sound.
+    void quack() {
+        std::cout << "Quack quack" << std::endl;
+    }
 };
 
+int main() {
+    // Create an object of the `Duck` class.
+    Duck my_duck;
+    
+    // Since `Duck` inherits from `Animal`, we can access and set the `name` attribute inherited from `Animal`.
+    my_duck.name = "Adolf";  // Assigning a name to the duck using the inherited property.
 
+    // Call the `showName()` method, which is also inherited from the `Animal` class.
+    my_duck.showName();
+    
+    // The `quack()` method is unique to the `Duck` class and can only be called on a `Duck` object.
+    my_duck.quack();
 
-
-
-
-
-
-
-int main(){
-	Duck my_duck;
-	
-	//as you can see we can access the name property even if it is not explicitly declared in the duck class
-	my_duck.name = "adolf";
-	my_duck.showName();
-	
-	//and unlike animal we can make it quack
-	my_duck.quack();
-	
-	
-	
-	
-	return 0;
+    return 0;
 }
