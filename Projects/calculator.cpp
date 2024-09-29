@@ -10,6 +10,11 @@ class Calculator{
 		char op;
 	public:
 		void getInput();
+		void showResult();
+		double sum();
+		double difference();
+		double multiplication();
+		double division();
 };
 
 
@@ -41,3 +46,24 @@ void Calculator::getInput(){
 			break;
 	}
 }
+
+
+double Calculator::sum(){
+	return Calculator::x + Calculator::y;
+}
+
+double Calculator::difference(){
+	return Calculator::x - Calculator::y;
+}
+
+double Calculator::multiplication(){
+	return Calculator::x * Calculator::y;
+}
+
+double Calculator::division(){
+	return Calculator::x - Calculator::y;
+}
+
+
+
+
