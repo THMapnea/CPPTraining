@@ -5,16 +5,24 @@
 
 class Calculator{
 	public:
-		double x;
-		double y;
-		char op;
+		std::vector<double> values;
+		std::vector<char> operations;
+		
 	public:
 		void getInput();
-		void showResult();
+		void showResult(double result);
 		double sum();
 		double difference();
 		double multiplication();
 		double division();
+	
+	Calculator(){
+		std::cout<<"calculator on"<<std::endl;
+	}
+	
+	~Calculator(){
+		std::cout<<"calculator off"<<std::endl;
+	}
 };
 
 
@@ -30,16 +38,29 @@ int main(){
 }
 
 void Calculator::getInput(){
+	double v_temp;
+	char c_temp;
 	std::cout<<"insert first number: ";
-	std::cin>>Calculator::x;
+	std::cin>>v_temp;
+	Calculator::values.push_back(v_temp);
 	std::cout<<"insert operation: ";
-	std::cin>>Calculator::op;
+	std::cin>>c_temp;
+	Calculator::operations.push_back(c_temp);
 	std::cout<<"insert second number: ";
-	std::cin>>Calculator::y;
-	switch(op){
+	std::cin>>v_temp;
+	Calculator::values.push_back(v_temp);
+	switch(operations[0]){
 		case '+':
+			Calculator::showResult(Calculator::sum());
 			break;
 		case '-':
+			Calculator::showResult(Calculator::difference());
+			break;
+		case '*':
+			Calculator::showResult(Calculator::multiplication());
+			break;
+		case '/':
+			Calculator::showResult(Calculator::division());
 			break;
 		default:
 			std::cout<<"error invalid operation inserted"<<std::endl;
@@ -48,20 +69,26 @@ void Calculator::getInput(){
 }
 
 
+
+void Calculator::showResult(double result){
+	std::cout<<result<<std::endl;
+}
+
+
 double Calculator::sum(){
-	return Calculator::x + Calculator::y;
+	return Calculator::values[0] + Calculator::values[1];
 }
 
 double Calculator::difference(){
-	return Calculator::x - Calculator::y;
+	return Calculator::values[0] - Calculator::values[1];
 }
 
 double Calculator::multiplication(){
-	return Calculator::x * Calculator::y;
+	return Calculator::values[0] * Calculator::values[1];
 }
 
 double Calculator::division(){
-	return Calculator::x - Calculator::y;
+	return Calculator::values[0] / Calculator::values[1];
 }
 
 
