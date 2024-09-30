@@ -3,10 +3,44 @@
 
 
 
+
+
+//DATA,CLASSES AND STRUCTURES
+union ValidExpressionData{
+	//declare a union to save all the possible data type of an expression
+	double value;
+	char operator_symbol;
+};
+
+enum ValidExpressionDataType{
+	//declare an enumeration to handle the various data types
+	DOUBLE,
+	CHAR
+};
+
+
+struct VariantType{
+	//instance of the enum and the union of data
+	ValidExpressionData VED;
+	ValidExpressionDataType VEDT;
+	
+	//constructor for each type of operation to manually handle all the types of data
+	VariantType(double value){
+		VED.value = value;
+		VEDT = DOUBLE;
+	}
+	
+	VariantType(char value){
+		VED.operator_symbol = value;
+		VEDT = CHAR;
+	}
+};
+
+
+//class that defines the calculator object
 class Calculator{
 	public:
-		std::vector<double> values;
-		std::vector<char> operations;
+		std::vector<VariantType> expression;
 		
 	public:
 		void getInput();
@@ -27,7 +61,7 @@ class Calculator{
 };
 
 
-
+//MAIN
 int main(){
 	
 	Calculator c;
@@ -39,68 +73,45 @@ int main(){
 }
 
 
-
+//FUNCTIONS
 void Calculator::getInput(){
+	//temp variables
 	bool insert = true;
 	double v_temp;
 	char c_temp;
 	
-	
 	std::cout<<"insert number: ";
 	std::cin>>v_temp;
-	Calculator::values.push_back(v_temp);
+	Calculator::expression.push_back(v_temp);
 	std::cout<<"insert an operation: ";
 	std::cin>>c_temp;
-	Calculator::operations.push_back(c_temp);
+	Calculator::expression.push_back(c_temp);
 	std::cout<<"insert a number: ";
 	std::cin>>v_temp;
-	values.push_back(v_temp);
+	Calculator::expression.push_back(v_temp);
 	
+	//check to stop operations
 	while(insert){
 		std::cout<<"do you want to add another operation? press (y) to confirm ";
 		std::cin>>c_temp;
 		if(c_temp != 'y' && c_temp != 'Y'){
 			break;
 		}
-	std::cout<<"insert an operation: ";
-	std::cin>>c_temp;
-	Calculator::operations.push_back(c_temp);
-	std::cout<<"insert number: ";
-	std::cin>>v_temp;
-	Calculator::values.push_back(v_temp);
+		
+		std::cout<<"insert an operation: ";
+		std::cin>>c_temp;
+		Calculator::expression.push_back(c_temp);
+		std::cout<<"insert a number: ";
+		std::cin>>v_temp;
+		Calculator::expression.push_back(v_temp);
 
 	}
 	
 }
 
 
-double Calculator::compute(){
-	for(int i = 0, j = 0; i < operations.size(); i++, j++){
-		//define operation order...
-	}
-}
-
-double Calculator::sum(){
-	return Calculator::values[0] + Calculator::values[1];
-}
-
-
-double Calculator::difference(){
-	return Calculator::values[0] - Calculator::values[1];
-}
-
-
-double Calculator::multiplication(){
-	return Calculator::values[0] * Calculator::values[1];
-}
-
-
-double Calculator::division(){
-	return Calculator::values[0] / Calculator::values[1];
-}
-
-
 void Calculator::showResult(double result){
+	//shows the result
 	std::cout<<result<<std::endl;
 }
 
