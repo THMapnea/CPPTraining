@@ -97,9 +97,9 @@ void Calculator::getInput(){
 	
 	//check to stop operations
 	while(insert){
-		std::cout<<"do you want to add another operation? press (y) to confirm ";
+		std::cout<<"do you want to STOP? press (y) to confirm ";
 		std::cin>>c_temp;
-		if(c_temp != 'y' && c_temp != 'Y'){
+		if(c_temp == 'y' || c_temp == 'Y'){
 			break;
 		}
 		
