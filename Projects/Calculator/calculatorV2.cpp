@@ -51,10 +51,15 @@ class Calculator{
 		double division();
 		void showResult(double result);
 	
+	private:
+		void debug();
+	
+	public:
 	Calculator(){
 		std::cout<<"calculator on"<<std::endl;
 	}
 	
+	public:
 	~Calculator(){
 		std::cout<<"calculator off"<<std::endl;
 	}
@@ -74,6 +79,8 @@ int main(){
 
 
 //FUNCTIONS
+
+//handles input
 void Calculator::getInput(){
 	//temp variables
 	bool insert = true;
@@ -109,7 +116,7 @@ void Calculator::getInput(){
 	
 }
 
-
+//shows the result
 void Calculator::showResult(double result){
 	//shows the result
 	std::cout<<result<<std::endl;
