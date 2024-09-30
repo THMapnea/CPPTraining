@@ -50,9 +50,7 @@ class Calculator{
 		double multiplication();
 		double division();
 		void showResult(double result);
-	
-	private:
-		void debug();
+		void showExpression();
 	
 	public:
 	Calculator(){
@@ -71,7 +69,7 @@ int main(){
 	
 	Calculator c;
 	c.getInput();
-	
+	c.showExpression();
 	
 	
 	return 0;
@@ -122,4 +120,16 @@ void Calculator::showResult(double result){
 	std::cout<<result<<std::endl;
 }
 
-
+void Calculator::showExpression(){
+	std::cout<<"the passed expression is: ";
+	for(const VariantType& element : Calculator::expression){
+		//chech wich type is the element and handle consequentially
+		if(element.VEDT == DOUBLE){
+			//access only the right data type so that std::cout knows what it should show
+			std::cout<<element.VED.value;
+		}else if(element.VEDT == CHAR){
+			std::cout<<element.VED.operator_symbol;
+		}
+	}
+	std::cout<<std::endl;
+}
