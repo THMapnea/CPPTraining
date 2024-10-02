@@ -122,6 +122,7 @@ void Calculator::showResult(double result){
 	std::cout<<result<<std::endl;
 }
 
+//shows the expression
 void Calculator::showExpression(){
 	std::cout<<"the passed expression is: ";
 	for(const VariantType& element : Calculator::expression){
@@ -136,7 +137,7 @@ void Calculator::showExpression(){
 	std::cout<<std::endl;
 }
 
-
+//compute the result
 double Calculator::compute(){
 	double total = 0;
 	double x; 
@@ -179,22 +180,27 @@ double Calculator::compute(){
 	return total;
 }
 
+//sum
 double Calculator::sum(double x, double y){
 	return x + y;
 }
 
+//difference
 double Calculator::difference(double x, double y){
 	return x - y;
 }
 
+//multiplication
 double Calculator::multiplication(double x, double y){
 	return x * y;
 }
 
+//division
 double Calculator::division(double x, double y){
 	return x / y;
 }
 
+//power
 double Calculator::power(double x, double y){
 	return pow(x,y);
 }
