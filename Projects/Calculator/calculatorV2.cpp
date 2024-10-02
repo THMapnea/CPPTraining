@@ -146,22 +146,27 @@ double Calculator::compute(){
 				x = Calculator::expression[i - 1].VED.value;
 				y = Calculator::expression[i + 1].VED.value;
 				}else{
-					x = 0;
+					x = total;
 					y = Calculator::expression[i + 1].VED.value;	
 				}
 			switch(Calculator::expression[i].VED.operator_symbol){
 				case '+':
-					total = total + (Calculator::sum(x,y));
+					total = (Calculator::sum(x,y));
 					break;
 				case '-':
-					total = total + (Calculator::difference(x,y));
+					total = (Calculator::difference(x,y));
 					break;
 				case '*':
-					total = total + (Calculator::multiplication(x,y));
+					total = (Calculator::multiplication(x,y));
 					break;
 				case '/':
-					total = total + (Calculator::division(x,y));
-					break;
+					if(y == 0){
+						std::cout<<"division by 0 not supported"<<std::endl;
+						break;
+					}else{
+						total = (Calculator::division(x,y));
+						break;
+					}
 				default:
 					std::cout<<"error operator unknown"<<std::endl;
 			}
@@ -185,6 +190,5 @@ double Calculator::multiplication(double x, double y){
 double Calculator::division(double x, double y){
 	return x / y;
 }
-
 
 
