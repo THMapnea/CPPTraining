@@ -44,11 +44,11 @@ class Calculator{
 		
 	public:
 		void getInput();
-		double compute();
-		double sum();
-		double difference();
-		double multiplication();
-		double division();
+		void compute();
+		double sum(double x, double y);
+		double difference(double x, double y);
+		double multiplication(double x, double y);
+		double division(double x, double y);
 		void showResult(double result);
 		void showExpression();
 	
@@ -69,6 +69,7 @@ int main(){
 	
 	Calculator c;
 	c.getInput();
+	c.compute();
 	c.showExpression();
 	
 	
@@ -133,3 +134,40 @@ void Calculator::showExpression(){
 	}
 	std::cout<<std::endl;
 }
+
+
+void Calculator::compute(){
+	double total = 0;
+	double x; 
+	double y;
+	for(int i = 1; i < Calculator::expression.size(); i += 2){
+		if(Calculator::expression[i].VEDT == CHAR ){
+			if(i == 1){
+				x = Calculator::expression[i - 1].VED.value;
+				y = Calculator::expression[i + 1].VED.value;
+				}else{
+					x = 0;
+					y = Calculator::expression[i + 1].VED.value;	
+				}
+			switch(Calculator::expression[i].VED.operator_symbol){
+				case '+':
+					total = total + (Calculator::sum(x,y));
+					std::cout<<total<<std::endl;
+					break;
+				default:
+					std::cout<<"error operator unknown"<<std::endl;
+			}
+		}
+	}
+
+}
+
+double Calculator::sum(double x, double y){
+	return x + y;
+}
+
+
+
+
+
+
