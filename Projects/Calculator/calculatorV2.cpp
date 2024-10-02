@@ -1,6 +1,6 @@
 #include<iostream>
 #include<vector>
-
+#include<cmath>
 
 
 
@@ -49,6 +49,7 @@ class Calculator{
 		double difference(double x, double y);
 		double multiplication(double x, double y);
 		double division(double x, double y);
+		double power(double x, double y);
 		void showResult(double result);
 		void showExpression();
 	
@@ -146,27 +147,30 @@ double Calculator::compute(){
 				x = Calculator::expression[i - 1].VED.value;
 				y = Calculator::expression[i + 1].VED.value;
 				}else{
-					x = total;
+					x = 0;
 					y = Calculator::expression[i + 1].VED.value;	
 				}
 			switch(Calculator::expression[i].VED.operator_symbol){
 				case '+':
-					total = (Calculator::sum(x,y));
+					total += (Calculator::sum(x,y));
 					break;
 				case '-':
-					total = (Calculator::difference(x,y));
+					total += (Calculator::difference(x,y));
 					break;
 				case '*':
-					total = (Calculator::multiplication(x,y));
+					total += (Calculator::multiplication(x,y));
 					break;
 				case '/':
 					if(y == 0){
 						std::cout<<"division by 0 not supported"<<std::endl;
 						break;
 					}else{
-						total = (Calculator::division(x,y));
+						total += (Calculator::division(x,y));
 						break;
 					}
+				case '^':
+					total += (Calculator::power(x,y));
+					break;
 				default:
 					std::cout<<"error operator unknown"<<std::endl;
 			}
@@ -189,6 +193,10 @@ double Calculator::multiplication(double x, double y){
 
 double Calculator::division(double x, double y){
 	return x / y;
+}
+
+double Calculator::power(double x, double y){
+	return pow(x,y);
 }
 
 
