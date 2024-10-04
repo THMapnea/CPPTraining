@@ -9,8 +9,11 @@ I will be using libraries in more advanced programs, so I’m not going to inclu
 To enhance readability in this repository, I’ve categorized the various topics as follows:
 
 Basic: Beginner-friendly topics that are essential to know.
+
 Intermediate: More complex features that can help automate and simplify basic tasks.
+
 Advanced: Topics focused on optimization, C++ behavior, and specific problem-solving.
+
 It’s important to note that the difficulty levels are determined by the purpose of the topics rather than the complexity of the code itself. While some advanced concepts may not be covered in depth, I believe it’s better to avoid overwhelming beginners with excessive information. I’m aware that there are alternative possibilities and uses for certain objects; for more comprehensive details, you can refer to cppreference.com.
 
 All files related to theoretical concepts offer brief overviews, as presenting every detail of what occurs behind the scenes would be impractical.
