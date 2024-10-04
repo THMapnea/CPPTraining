@@ -7,7 +7,19 @@
 
 class Calculator{
 	public:
+		std::string expression;
+	
+	public:
 		bool bracketClosureController(std::string bracket_list);
+	
+	public:
+		Calculator(){
+			std::cout<<"calculator on"<<std::endl;
+		}
+	public:
+		~Calculator(){
+			std::cout<<"calculator off"<<std::endl;
+		}
 };
 
 
