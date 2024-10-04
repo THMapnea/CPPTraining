@@ -8,12 +8,17 @@
 class Calculator{
 	public:
 		std::string expression;
+		double result;
 	
 	public:
+		void getExpression();
+		void showExpression();
+		void showResult();
 		bool bracketClosureController(std::string bracket_list);
 	
 	public:
 		Calculator(){
+			Calculator::result = 0;
 			std::cout<<"calculator on"<<std::endl;
 		}
 	public:
@@ -29,6 +34,9 @@ class Calculator{
 int main(){
 	
 	Calculator c;
+	c.getExpression();
+	c.showExpression();
+	c.showResult();
 	
 	return 0;
 }
@@ -36,8 +44,18 @@ int main(){
 
 
 
+void Calculator::getExpression(){
+	std::cout<<"insert your expression following mathematical notation: "<<std::endl;
+	std::cin>>Calculator::expression;
+}
 
+void Calculator::showExpression(){
+	std::cout<<"the entered expression is: "<<Calculator::expression<<std::endl;
+}
 
+void Calculator::showResult(){
+	std::cout<<"the result of your expression is: "<<Calculator::result<<std::endl;
+}
 
 bool Calculator::bracketClosureController(std::string bracket_list){
     std::stack<char> open_brackets;
