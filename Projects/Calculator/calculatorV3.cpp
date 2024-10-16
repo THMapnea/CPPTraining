@@ -1,6 +1,15 @@
 #include<iostream>
 #include<vector>
 #include<stack>
+#include<map>
+
+
+struct Operation{
+	std::string op;
+	double operand1;
+	double operand2;
+};
+
 
 
 
@@ -8,17 +17,17 @@
 class Calculator{
 	public:
 		std::string expression;
-		double result;
 	
 	public:
 		void getExpression();
 		void showExpression();
-		void showResult();
+		void showResult(double result);
 		bool bracketClosureController(std::string bracket_list);
+		std::stack<Operation> sortOperation();
+		double computeExpression();
 	
 	public:
 		Calculator(){
-			Calculator::result = 0;
 			std::cout<<"calculator on"<<std::endl;
 		}
 	public:
@@ -35,8 +44,9 @@ int main(){
 	
 	Calculator c;
 	c.getExpression();
+	c.sortOperation();
 	c.showExpression();
-	c.showResult();
+	c.showResult(c.computeExpression());
 	
 	return 0;
 }
@@ -53,8 +63,8 @@ void Calculator::showExpression(){
 	std::cout<<"the entered expression is: "<<Calculator::expression<<std::endl;
 }
 
-void Calculator::showResult(){
-	std::cout<<"the result of your expression is: "<<Calculator::result<<std::endl;
+void Calculator::showResult(double result){
+	std::cout<<"the result of your expression is: "<<result<<std::endl;
 }
 
 bool Calculator::bracketClosureController(std::string bracket_list){
@@ -85,6 +95,54 @@ bool Calculator::bracketClosureController(std::string bracket_list){
     // If stack is empty, all brackets are matched
     return open_brackets.empty();
 }
+
+double Calculator::computeExpression(){
+	double result = 0;
+	
+	return result;
+}
+
+std::stack<Operation> Calculator::sortOperation(){
+	std::stack<Operation> sorted_operation;
+	std::stack<int> brackets_state;
+	std::map<char,int> BracketState = {
+			{'(' , 1},
+			{'[' , 2},
+			{'{' , 3}
+	};
+	
+	if(Calculator::bracketClosureController(Calculator::expression)){
+		
+		for(int i = 0; i < Calculator::expression.size(); i++){
+			if(expression[i] == '(' || expression[i] == '[' || expression[i] == '{'){
+				brackets_state.push(BracketState[expression[i]]);
+			}else{
+				brackets_state.pop();
+			}
+		}
+	}
+	else{
+		std::cout<<"some of the brackets may not be closed"<<std::endl;
+	}
+/*
+	while(!brackets_state.empty()){
+		std::cout<<brackets_state.top()<<std::endl;
+		brackets_state.pop();
+	}
+*/	
+	
+	return sorted_operation;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
