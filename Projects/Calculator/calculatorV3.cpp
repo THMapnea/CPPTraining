@@ -125,13 +125,3 @@ std::stack<Operation> Calculator::sortOperation(){
 
 
 
-
-
-
-
-
-
-
-
-
-
