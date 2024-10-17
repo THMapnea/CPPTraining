@@ -2,12 +2,13 @@
 #include<vector>
 #include<stack>
 #include<map>
+#include<variant>
 
 
 struct Operation{
 	std::string op;
-	double operand1;
-	double operand2;
+	std::variant<Operation*,double> operand1;
+	std::variant<Operation*,double> operand2;
 };
 
 
@@ -59,13 +60,16 @@ void Calculator::getExpression(){
 	std::cin>>Calculator::expression;
 }
 
+
 void Calculator::showExpression(){
 	std::cout<<"the entered expression is: "<<Calculator::expression<<std::endl;
 }
 
+
 void Calculator::showResult(double result){
 	std::cout<<"the result of your expression is: "<<result<<std::endl;
 }
+
 
 bool Calculator::bracketClosureController(std::string bracket_list){
     std::stack<char> open_brackets;
@@ -96,22 +100,19 @@ bool Calculator::bracketClosureController(std::string bracket_list){
     return open_brackets.empty();
 }
 
+
 double Calculator::computeExpression(){
 	double result = 0;
 	
 	return result;
 }
 
-std::stack<Operation> Calculator::sortOperation(){
-	
-	std::stack<Operation> sorted_operation;
-	std::string expression = Calculator::expression;
-	
-	if(Calculator::bracketClosureController(expression)){
-		
-		for(int i = 0; i < expression.size(); i++){
 
-		}
+std::stack<Operation> Calculator::sortOperation(){
+	std::string expression = Calculator::expression;
+	std::stack<Operation> sorted_operation;
+		
+	if(Calculator::bracketClosureController(expression)){
 		
 	}else{
 		std::cout<<"some of the brackets may not be closed"<<std::endl;
@@ -120,7 +121,6 @@ std::stack<Operation> Calculator::sortOperation(){
 	
 	return sorted_operation;
 }
-
 
 
 
