@@ -103,33 +103,20 @@ double Calculator::computeExpression(){
 }
 
 std::stack<Operation> Calculator::sortOperation(){
-	std::stack<Operation> sorted_operation;
-	std::stack<int> brackets_state;
-	std::map<char,int> BracketState = {
-			{'(' , 1},
-			{'[' , 2},
-			{'{' , 3}
-	};
 	
-	if(Calculator::bracketClosureController(Calculator::expression)){
+	std::stack<Operation> sorted_operation;
+	std::string expression = Calculator::expression;
+	
+	if(Calculator::bracketClosureController(expression)){
 		
-		for(int i = 0; i < Calculator::expression.size(); i++){
-			if(expression[i] == '(' || expression[i] == '[' || expression[i] == '{'){
-				brackets_state.push(BracketState[expression[i]]);
-			}else{
-				brackets_state.pop();
-			}
+		for(int i = 0; i < expression.size(); i++){
+
 		}
-	}
-	else{
+		
+	}else{
 		std::cout<<"some of the brackets may not be closed"<<std::endl;
 	}
-/*
-	while(!brackets_state.empty()){
-		std::cout<<brackets_state.top()<<std::endl;
-		brackets_state.pop();
-	}
-*/	
+
 	
 	return sorted_operation;
 }
