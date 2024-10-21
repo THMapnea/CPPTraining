@@ -17,12 +17,8 @@ int main() {
 
         // Check if the input is invalid (e.g., not a number)
         if (std::cin.fail()) {
-            std::cin.clear(); // Clear the error flag
-            std::cin.ignore(10000, '\n'); // Ignore invalid input
-            std::cout << "You didn't insert a valid number. Please try again." << std::endl;
-        }
-        else if (x < 0) {
-            std::cout << "Please insert a positive number." << std::endl;
+            std::cout << "You didn't insert a number." << std::endl;
+            break;
         }
     } while (x < 0);
 
