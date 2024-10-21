@@ -5,6 +5,7 @@ I recognize that I am nowhere near the level of knowledge that many C++ programm
 As previously mentioned, there are countless ways to implement algorithms effectively. The solutions presented here reflect my understanding at the time of writing. Some programs are at the same level as those requested in lectures, while others delve deeper and may not be as beginner-friendly. Since every programmer has their own style, especially in C++, feel free to modify any parts of my code that don’t align with your preferences.
 
 I will be using libraries in more advanced programs, so I’m not going to include any namespaces. You can easily delete the std:: prefix and add using namespace std; to make the programs work seamlessly.
+
 All the libraries project will be mostly compiled in visual studio 2022.
 
 To enhance readability in this repository, I’ve categorized the various topics as follows:
