@@ -17,6 +17,7 @@ struct Edge{
  };
 
 
+
 //CLASSES
 class Graph{
 	public:
@@ -25,6 +26,7 @@ class Graph{
 	
 	public:
 		void createGraph();	
+		void connectVertex();
 	
 };
 
@@ -39,6 +41,7 @@ int main(){
 	
 	Graph g;
 	g.createGraph();
+	g.connectVertex();
 	
 	showGraph(g);
 	
@@ -62,6 +65,16 @@ void Graph::createGraph() {
         v.vertex_label = t_label; 
         Graph::vertices.push_back(v); 
     }
+}
+
+
+
+void Graph::connectVertex(){
+	for(int i = 0; i < Graph::vertices.size(); i++){
+		//we need to get the list of vertex to connect to the i-th vertex from the user and then generate the edge with the various endpoints
+		//keep in mind that it is necessary to handle unexistent vertex that may be inserted and preferrebly for now looping for example 
+		//if we get a tuple like <v1,v1>
+	}
 }
 
 
