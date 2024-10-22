@@ -6,7 +6,7 @@ As previously mentioned, there are countless ways to implement algorithms effect
 
 I will be using libraries in more advanced programs, so I’m not going to include any namespaces. You can easily delete the std:: prefix and add using namespace std; to make the programs work seamlessly.
 
-All the libraries project will be mostly compiled in visual studio 2022.
+All the libraries project will be mostly compiled in visual studio 2022 except of course for built-in libraries.
 
 To enhance readability in this repository, I’ve categorized the various topics as follows:
 
