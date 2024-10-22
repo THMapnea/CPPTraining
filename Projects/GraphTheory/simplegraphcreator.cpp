@@ -72,6 +72,7 @@ void Graph::createGraph() {
 void Graph::connectVertex(){
 	for(int i = 0; i < Graph::vertices.size(); i++){
 		//we need to get the list of vertex to connect to the i-th vertex from the user and then generate the edge with the various endpoints
+		//to do so we can keep asking until a certain key is pressed and then the resulting array will be processed
 		//keep in mind that it is necessary to handle unexistent vertex that may be inserted and preferrebly for now looping for example 
 		//if we get a tuple like <v1,v1>
 	}
