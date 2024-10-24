@@ -2,7 +2,8 @@
 #include<stack>
 #include<vector>
 
-
+//PROBLEM
+//given a string containing all the brackets chek if the number of the brackets of the same type is the same
 
 
 
