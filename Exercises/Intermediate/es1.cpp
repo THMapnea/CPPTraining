@@ -3,7 +3,7 @@
 
 
 //PROBLEM
-//Ask the user to insert a integer number and chek if the input is correct
+//Ask the user to insert a integer number and validate the input
 
 
 
