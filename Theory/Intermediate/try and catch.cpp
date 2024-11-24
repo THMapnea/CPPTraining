@@ -26,9 +26,23 @@ int main(){
 		}
 	//here we will handle what to do in case of erro
 	}catch(int x){
-		std::cout<<"the number "<<x<<" is higher than 20";
+		std::cout<<"the number "<<x<<" is higher than 20"<<std::endl;;
 	}
 	
+	//sometimes we dont know what type of error we will be handling
+	//in c++ we can use ... to solve this issue
+	try {
+		  int pageindex = 12;
+		  if (pageindex == 1) {
+		    std::cout<<"correct index";
+		  } else {
+		    throw 404;
+		  }
+		}
+	catch (...) {
+	  std::cout<<"generic error";
+	}
+		
 	
 	
 	return 0;
