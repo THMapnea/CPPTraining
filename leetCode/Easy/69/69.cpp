@@ -1,6 +1,6 @@
 #include <iostream>
 
-// Define the Solution class that contains the mySqrt function
+
 class Solution {
 public:
     // Function to compute the integer part of the square root of a number `x`
