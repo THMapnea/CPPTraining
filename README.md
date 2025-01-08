@@ -19,3 +19,5 @@ To enhance readability in this repository, I’ve categorized the various topics
 It’s important to note that the difficulty levels are determined by the purpose of the topics rather than the complexity of the code itself. While some advanced concepts may not be covered in depth, I believe it’s better to avoid overwhelming beginners with excessive information. I’m aware that there are alternative possibilities and uses for certain objects; for more comprehensive details, you can refer to cppreference.com.
 
 All files related to theoretical concepts offer brief overviews, as presenting every detail of what occurs behind the scenes would be impractical.
+
+There are also data structures and algorithm concepts and definition in the theory section that can be useful for approaching leetcode problems and in general competitive programming.
