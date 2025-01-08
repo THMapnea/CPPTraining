@@ -1,10 +1,6 @@
 #include<iostream>
 
 
-
-
-
-
 //we will se an example of a nested lopp that however run with O(N) complexity
 //this happens because it is a geometric progression and we would have an outer loop 
 //that runs with complexity log_2(N) and the outer loop runs with a progression as N, N/2, N/4, ... therefore we have N
