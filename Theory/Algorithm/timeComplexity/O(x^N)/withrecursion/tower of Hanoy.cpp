@@ -11,7 +11,7 @@ void towerOfHanoi(int num, char src, char dst, char temp);
 /*
 
 	Initial:      Step 1:       Step 2:       Step 3:       Step 4:
-     A | 321       A | 32        A | 3         A | 3         A |
+     	 A | 321       A | 32        A | 3         A | 3         A |
 	 B |           B | 1         B | 1         B |           B | 3
 	 C |           C |           C | 2         C | 21        C | 21
 
