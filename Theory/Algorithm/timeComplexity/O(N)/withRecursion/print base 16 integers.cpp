@@ -1,11 +1,6 @@
 #include<iostream>
 
 
-
-
-
-
-
 //prototype
 void printInt(int number, int const base);
 
