@@ -1,4 +1,9 @@
 #include <iostream>
+/*
+
+  We are going to implement from scratch
+
+*/
 
 // Definition of the structure that composes the node of the singly linked list
 struct SLNode
