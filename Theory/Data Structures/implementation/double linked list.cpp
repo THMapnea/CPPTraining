@@ -1,5 +1,12 @@
 #include <iostream>
 
+
+/*
+
+  We are going to implement from scratch
+
+*/
+
 // Definition of the structure that composes the node of the doubly linked list
 struct DLNode
 {
