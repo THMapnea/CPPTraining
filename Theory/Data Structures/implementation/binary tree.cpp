@@ -1,5 +1,13 @@
 #include <iostream>
 
+
+/*
+
+  We are going to implement from scratch
+
+*/
+
+
 // Template class to generalize data insertion
 // Node class for the binary tree
 template <typename T>
